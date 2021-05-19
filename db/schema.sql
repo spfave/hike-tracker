@@ -24,13 +24,13 @@ CREATE TABLE hike (
     id INT NOT NULL,
     time INT NOT NULL,
     destination VARCHAR(50) NOT NULL,
-    user_id VARCHAR(50) NOT NULL,
+    user_id INT NOT NULL,
     trail_id INT NOT NULL
 );
 
 CREATE TABLE comment (
     id INT NOT NULL,
     text VARCHAR(50) NOT NULL,
-    user_id VARCHAR(50) NOT NULL,
+    user_id INT NOT NULL,
     trail_id INT NOT NULL
 );
