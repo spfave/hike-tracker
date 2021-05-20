@@ -32,7 +32,7 @@ User.hasMany(Comment, {
     onDelete: 'CASCADE'
 });
 
-User.belongsTo(Comment, {
+Comment.belongsTo(User, {
     foreignKey: 'user_id'
   });
   
@@ -41,7 +41,7 @@ Trail.hasMany(Comment, {
     onDelete: 'CASCADE'
 });
   
-Trail.belongsTo(Comment, {
+Comment.belongsTo(Trail, {
     foreignKey: 'user_id'
   });
 
