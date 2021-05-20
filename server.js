@@ -3,7 +3,7 @@ const express = require('express');
 // const session = require("express-session");
 const path = require('path');
 
-// const sequelize = require("./config/connection");
+const sequelize = require('./config/connection');
 // const SequelizeStore = require("connect-session-sequelize")(session.Store);
 // const helpers = require("./utils/hb-helpers");
 
@@ -34,6 +34,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(routes);
 
 // Sync database connection and start server
-// sequelize.sync({ force: false }).then(() => {
-app.listen(PORT, () => console.log(`Server listening on port: ${PORT}`));
-// });
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => console.log(`Server listening on port: ${PORT}`));
+});
