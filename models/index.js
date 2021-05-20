@@ -14,7 +14,7 @@ User.hasMany(Hike, {
     onDelete: 'CASCADE'
 });
 
-User.belongsTo(User, {
+User.belongsTo(Hike, {
     foreignKey: 'user_id'
   });
   
