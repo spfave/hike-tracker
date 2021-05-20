@@ -8,12 +8,11 @@ router.get('/', async (req, res) => {
     const trails = trailData.map((trail) => trail.get({ plain: true }));
 
     res.render('homepage', { trails });
+    // res.send('<h1>Hike Tracker Homepage</h1>');
     // res.json({trails}) // for testing
   } catch (error) {
     res.status(500).json(error);
   }
-
-  // res.send('<h1>Hike Tracker Homepage</h1>');
 });
 
 // Trail Details
