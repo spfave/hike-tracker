@@ -1,8 +1,19 @@
 const router = require('express').Router();
+const { User, Trail, Hike, Comment } = require('../models');
 
 // Application homepage - list of trails and login/signup form
 router.get('/', async (req, res) => {
-  res.send('<h1>Hike Tracker Homepage</h1>');
+  try {
+    const trailData = await Trail.findAll();
+    const trails = trailData.map((trail) => trail.get({ plain: true }));
+
+    res.render('homepage', { trails });
+    // res.json({trails}) // for testing
+  } catch (error) {
+    res.status(500).json(error);
+  }
+
+  // res.send('<h1>Hike Tracker Homepage</h1>');
 });
 
 // Trail Details
