@@ -14,7 +14,7 @@ User.hasMany(Hike, {
     onDelete: 'CASCADE'
 });
 
-User.belongsTo(Hike, {
+Hike.belongsTo(User, {
     foreignKey: 'user_id'
   });
   
@@ -23,7 +23,7 @@ Trail.hasMany(Hike, {
     onDelete: 'CASCADE'
 });
 
-Trail.belongsTo(Hike, {
+Hike.belongsTo(Trail, {
     foreignKey: 'user_id'
   });
   
