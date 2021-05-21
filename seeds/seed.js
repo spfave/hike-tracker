@@ -7,15 +7,18 @@ const userData = require('./userData.json');
 const commentData = require('./commentData.json');
 
 const seedDatabase = async () => {
+    
     await sequelize.sync({ force: true });
 
-    await Hike.bulkCreate(hikeData);
+    await User.bulkCreate(userData, { individualHooks: true });
 
     await Trail.bulkCreate(trailData);
 
-    await User.bulkCreate(userData);
-
+    await Hike.bulkCreate(hikeData);    
+    
     await Comment.bulkCreate(commentData);
 }
+
+
 
 seedDatabase();
