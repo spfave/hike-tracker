@@ -16,7 +16,24 @@ router.get('/', async (req, res) => {
 });
 
 // Trail Details
-router.get('/trail/:id', async (req, res) => {});
+router.get('/trail/:id', async (req, res) => {
+  try {
+    const trailData = await Trail.findByPk(req.params.id, {
+      include: [
+        {
+          model: Comment,
+          include: [{ model: User, attributes: ['name'] }],
+        },
+      ],
+    });
+    const trail = trailData.get({ plain: true });
+
+    res.render('trail', { ...trail, logged_in: req.session.loggedIn });
+    // res.json({ ...trail, logged_in: req.session.loggedIn }); // for testing
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
 
 // Trail - create new trail
 router.get('/trail/new/', async (req, res) => {});
