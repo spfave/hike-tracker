@@ -29,7 +29,7 @@ Trail.init(
         allowNull: true
     },
     difficulty: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: true        
    },
     
