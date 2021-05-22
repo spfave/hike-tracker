@@ -7,9 +7,8 @@ router.get('/', async (req, res) => {
     const trailData = await Trail.findAll();
     const trails = trailData.map((trail) => trail.get({ plain: true }));
 
-    res.render('homepage', { trails });
-    // res.send('<h1>Hike Tracker Homepage</h1>');
-    // res.json({trails}) // for testing
+    res.render('homepage', { loggedIn: req.session.loggedIn }); //...trails,
+    // res.json({...trails}) // TESTING
   } catch (error) {
     res.status(500).json(error);
   }
@@ -28,8 +27,8 @@ router.get('/trail/:id', async (req, res) => {
     });
     const trail = trailData.get({ plain: true });
 
-    res.render('trail', { ...trail, logged_in: req.session.loggedIn });
-    // res.json({ ...trail, logged_in: req.session.loggedIn }); // for testing
+    // res.render('trail', { ...trail, logged_in: req.session.loggedIn });
+    res.json({ ...trail, logged_in: req.session.loggedIn }); // TESTING
   } catch (error) {
     res.status(500).json(error);
   }
@@ -42,7 +41,21 @@ router.get('/trail/new/', async (req, res) => {});
 router.get('/trail/edit/:id', async (req, res) => {});
 
 // User Dashboard
-router.get('/dashboard/', async (req, res) => {});
+router.get('/dashboard/', async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.session.userId, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Hike }],
+    });
+    const user = userData.get({ plain: true });
+
+    res.render('dashboard', { ...user, logged_in: true });
+  } catch (error) {
+    res
+      .status(500)
+      .json({ message: 'Can not retrieve your dashboard at this time' });
+  }
+});
 
 // User Dashboard - log new hike
 router.get('/dashboard/hike/new', async (req, res) => {});
