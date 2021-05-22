@@ -3,10 +3,10 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Museum</title>
-  <link rel="stylesheet" type="text/css" href="/css/jass.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Let's Go Hike!</title>
   <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
 </head>
 
 <body>
@@ -18,10 +18,11 @@
     {{#if loggedIn}}
     <button id="logout" class="btn-no-style">Logout</button>
     {{else}}
-    <a href="/login">Login</a>
+    <a href="/">Login</a>
     {{/if}}
   </nav>
   <main>
+    {{{ body }}}
   </main>
   {{#if loggedIn}}
   <script src="/js/logout.js"></script>
