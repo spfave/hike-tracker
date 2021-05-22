@@ -11,7 +11,31 @@ router.post('/', async (req, res) => {
 
     res.status(200).json(newComment);
   } catch (error) {
-    res.status(400).json('Error posting comment, please try again');
+    res
+      .status(500)
+      .json({ message: 'Error posting comment, please try again' });
+  }
+});
+
+// Edit comment
+
+// Delete comment
+router.delete('/:id', async (req, res) => {
+  try {
+    const commentData = await Comment.destroy({
+      where: { id: req.params.id },
+    });
+
+    if (!commentData) {
+      res.status(404).json({ message: `Post does not exist to delete` });
+      return;
+    }
+
+    res.status(200).json(commentData);
+  } catch (error) {
+    res
+      .status(500)
+      .json({ message: 'Could not delete post, please try again' });
   }
 });
 
