@@ -9,7 +9,7 @@ router.post('/', async (req, res) => {
       user_id: req.session.userId,
     });
 
-    res.status(200).json(newComment);
+    res.status(201).json(newComment);
   } catch (error) {
     res
       .status(500)
@@ -18,6 +18,24 @@ router.post('/', async (req, res) => {
 });
 
 // Edit comment
+router.put('/:id', async (req, res) => {
+  try {
+    const commentData = await Comment.update(req.body, {
+      where: { id: req.params.id },
+    });
+
+    if (!commentData[0]) {
+      res.status(404).json({ message: `Comment does not exist to update` });
+      return;
+    }
+
+    res.status(200).json(commentData);
+  } catch (error) {
+    res
+      .status(500)
+      .json({ message: 'Could not update post, please try again' });
+  }
+});
 
 // Delete comment
 router.delete('/:id', async (req, res) => {
