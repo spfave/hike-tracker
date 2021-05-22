@@ -19,8 +19,6 @@ router.post('/', async (req, res) => {
   }
 });
 
-module.exports = router;
-
 // Login user
 router.post('/login', async (req, res) => {
   try {
@@ -57,3 +55,12 @@ router.post('/login', async (req, res) => {
     });
   }
 });
+
+// Logout user
+router.post('/logout', (req, res) => {
+  req.session.destroy(() => {
+    res.status(204).end();
+  });
+});
+
+module.exports = router;
