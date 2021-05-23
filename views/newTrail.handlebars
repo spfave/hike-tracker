@@ -1,49 +1,34 @@
-{{!-- New trail 
-
-contains information, such as;
-
-Name
-Length
-Elevation
-Trailhead Location
-Trail Peak/End Location --}}
-
-<!-- Name
-Length
-Elevation
-Trailhead Location
-Trail Peak/End Location --}} -->
+<!-- trail name (string)
+trailhead location (string(
+distance/trail length (integer)
+elevation (integer)
+difficulty (integer) this could be a dropdown selection (1-5) or we could change to a word selection (easy, medium, hard) which might be better} -->
 
 <div class="login-card">
     <h2 class="page-title">New Trail</h2>
     <form class="form login-form">
         <div class="form-group">
             <label for="">Trail Name</label>
-            <input class="form-input" type="text" id="" />
+            <input class="form-input" type="text" id="trailName" />
         </div>
         <div class="form-group">
             <label for="">Trail Length</label>
-            <input class="form-input" type="text" id="" />
-        </div>
-        <div class="form-group">
-            <label for="">Length</label>
-            <input class="form-input" type="text" id="" />
+            <input class="form-input" type="text" id="trailLength" />
         </div>
         <div class="form-group">
             <label for="">Elevation</label>
-            <input class="form-input" type="" id="" />
+            <input class="form-input" type="text" id="elevation" />
         </div>
         <div class="form-group">
             <label for="">Trailhead Location</label>
-            <input class="form-input" type="" id="" />
+            <input class="form-input" type="text" id="location" />
         </div>
-        <div class="form-group">
-            <label for="">Trail Peak</label>
-            <input class="form-input" type="" id="" />
-        </div>
-        <div class="form-group">
-            <label for="">End Location</label>
-            <input class="form-input" type="" id="" />
+        <div class="select is-rounded">
+            <select>
+                <option>Easy</option>
+                <option>Medium</option>
+                <option>Hard</option>
+            </select>
         </div>
         <div class="form-group">
             <button class="btn btn-primary" type="submit">Submit!</button>
