@@ -4,25 +4,27 @@ distance/trail length (integer)
 elevation (integer)
 difficulty (integer) this could be a dropdown selection (1-5) or we could change to a word selection (easy, medium, hard) which might be better} -->
 
-<div class="login-card">
+<div class="columns">
     <h2 class="page-title">New Trail</h2>
     <form class="form login-form">
-        <div class="form-group">
+        <div class="field">
             <label for="">Trail Name</label>
-            <input class="form-input" type="text" id="trailName" />
+            <input class="input is-info" type="text" id="trailName" />
         </div>
-        <div class="form-group">
+        <div class="field">
             <label for="">Trail Length</label>
-            <input class="form-input" type="text" id="trailLength" />
+            <input class="input is-info" type="text" id="trailLength" />
         </div>
-        <div class="form-group">
+        <div class="field">
             <label for="">Elevation</label>
-            <input class="form-input" type="text" id="elevation" />
+            <input class="input is-info" type="text" id="elevation" />
         </div>
-        <div class="form-group">
+        <div class="field">
             <label for="">Trailhead Location</label>
-            <input class="form-input" type="text" id="location" />
+            <input class="input is-info" type="text" id="location" />
         </div>
+        <div class="field">
+        <label class="label">Difficulty Level</label>
         <div class="select is-rounded">
             <select>
                 <option>Easy</option>
@@ -30,7 +32,8 @@ difficulty (integer) this could be a dropdown selection (1-5) or we could change
                 <option>Hard</option>
             </select>
         </div>
-        <div class="form-group">
+        </div>
+        <div class="field">
             <button class="btn btn-primary" type="submit">Submit!</button>
         </div>
     </form>
