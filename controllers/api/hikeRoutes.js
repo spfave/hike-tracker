@@ -1,33 +1,31 @@
 const router = require('express').Router();
-const { Trail } = require('../../models');
+const { Hike } = require('../../models');
 
-// Post a Trail
+// Post a Hike
 router.post('/', async (req, res) => {
     try {
-        const newTrail = await Trail.create(req.body);
-        res.status(201).json(newTrail);
+        const newHike = await Hike.create(req.body);
+        res.status(201).json(newHike);
     } catch (error) {
         res.status(500).json(error);
     }    
 });
 
-
-
-// DELETE a Trail
+// DELETE a Hike
 router.delete('/:id', async (req, res) => {
     try {
-      const newTrail = await Trail.destroy({
+      const newHike = await Hike.destroy({
         where: {
           id: req.params.id
         }
       });
   
-      if (!newTrail) {
-        res.status(404).json({ message: 'No trail found with this id!' });
+      if (!newHike) {
+        res.status(404).json({ message: 'No hike found with this id!' });
         return;
       }
   
-      res.status(200).json(newTrail);
+      res.status(200).json(newHike);
     } catch (err) {
       res.status(500).json(err);
     }
