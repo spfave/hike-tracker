@@ -1,14 +1,18 @@
+const Sequelize = require('sequelize');
 const router = require('express').Router();
 const { User, Trail, Hike, Comment } = require('../models');
 
 // Application homepage - list of trails and login/signup form
 router.get('/', async (req, res) => {
   try {
-    const trailData = await Trail.findAll();
+    const trailData = await Trail.findAll({
+      order: Sequelize.literal('rand()'),
+      limit: 2,
+    });
     const trails = trailData.map((trail) => trail.get({ plain: true }));
 
-    res.render('homepage', { loggedIn: req.session.loggedIn }); //...trails,
-    // res.json({...trails}) // TESTING
+    // res.render('homepage', { loggedIn: req.session.loggedIn }); //trails,
+    res.json({ trails }); // TESTING
   } catch (error) {
     res.status(500).json(error);
   }
@@ -74,5 +78,10 @@ router.get('/dashboard/hike/edit/:id', async (req, res) => {
 
 // User Profile
 // router.get('/profile/:id', async (req, res) => {});
+
+// Login/Sign up page
+router.get('/login', (req, res) => {
+  res.render('login');
+});
 
 module.exports = router;
