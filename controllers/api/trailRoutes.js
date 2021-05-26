@@ -33,5 +33,39 @@ router.delete('/:id', async (req, res) => {
     }
 });
 
-  
-module.exports = router
+// GET Trails
+router.get('/:id', async (req, res) => {
+  try {
+    const newTrail = await Trail.findByPk(req.params.id);
+    if (!newTrail) {
+      res.status(404).json({ message: 'No trail with this id!' });
+      return;
+    }
+    res.status(200).json(newTrail);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// PUT update a trail
+router.put('/:id', async (req, res) => {
+  try {
+    const findTrail = await Trail.findByPk(req.params.id);
+
+    if (findTrail) {
+      const newTrail = await Trail.update(req.body, {
+        where: {
+          id: req.params.id,
+        },
+      });
+      res.status(200).json(newTrail);
+    } else {
+      res.status(404).json({ message: 'No trail with this id!' });
+    }
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
+module.exports = router;
