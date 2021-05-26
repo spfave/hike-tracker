@@ -1,11 +1,11 @@
 <div class='columns'>
-  <div class='column is-3'>
-    <h1>{{testObj.col1.name}}</h1>
-    {{!-- <ul>
+  <!--<div class='column is-3'>
+    {{!-- <h1>{{testObj.col1.name}}</h1> --}}
+    <ul>
       {{#each trails}}
-        <li>{{this.name}}</li>
+      <li>{{this.name}}</li>
       {{/each}}
-    </ul> --}}
+    </ul>
 
   </div>
   <div class='column is-3'>
@@ -15,9 +15,21 @@
   <div class='column is-3'>
     <h1>{{testObj.col3.name}}</h1>
   </div>
-</div>
+</div>-->
 
-<script src='./js/homepage.js'></script>
+
+  {{#each trails}}
+  <div class='column is-3'>
+    <a href='/trail/{{this.id}}'>
+      <h2>{{this.name}}</h2>
+    </a>
+    Second column
+  </div>
+  {{/each}}
+
+
+  <script src='./js/homepage.js'></script>
+</div>
 
 {{!
 <div class="columns is-centered">
