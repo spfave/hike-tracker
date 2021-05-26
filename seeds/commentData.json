@@ -1,32 +1,27 @@
 [
-    {
-      "id": "1",
-      "text": "This trail was fun",
-      "user_id": "1",
-      "trail_id":"1"
-    },
-    {
-        "id": "2",
-        "text": "Great scenery",
-        "user_id": "2",
-        "trail_id":"2"
-    },
-    {
-        "id": "3",
-        "text": "Well maintained",
-        "user_id": "3",
-        "trail_id":"3"
-    },
-    {
-        "id": "4",
-        "text": "This trail was difficult",
-        "user_id": "4",
-        "trail_id":"4"
-    },
-    {
-        "id": "5",
-        "text": "Beautiful trail",
-        "user_id": "5",
-        "trail_id":"5"
-    }
-  ]
+  {
+    "text": "This trail was fun",
+    "user_id": "1",
+    "trail_id": "1"
+  },
+  {
+    "text": "Great scenery",
+    "user_id": "2",
+    "trail_id": "2"
+  },
+  {
+    "text": "Well maintained",
+    "user_id": "3",
+    "trail_id": "3"
+  },
+  {
+    "text": "This trail was difficult",
+    "user_id": "4",
+    "trail_id": "4"
+  },
+  {
+    "text": "Beautiful trail",
+    "user_id": "5",
+    "trail_id": "5"
+  }
+]
