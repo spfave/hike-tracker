@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Hike } = require('../../models');
 
-// Post a Hike
+// POST a Hike
 router.post('/', async (req, res) => {
     try {
         const newHike = await Hike.create(req.body);
@@ -31,7 +31,7 @@ router.delete('/:id', async (req, res) => {
     }
 });
   
-// GET Hikes
+// GET a Hike
 router.get('/:id', async (req, res) => {
   try {
     const newHike = await Hike.findByPk(req.params.id);
@@ -65,5 +65,5 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-
 module.exports = router;
+

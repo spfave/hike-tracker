@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Trail } = require('../../models');
 
-// Post a Trail
+// POST a Trail
 router.post('/', async (req, res) => {
     try {
         const newTrail = await Trail.create(req.body);
@@ -10,8 +10,6 @@ router.post('/', async (req, res) => {
         res.status(500).json(error);
     }    
 });
-
-
 
 // DELETE a Trail
 router.delete('/:id', async (req, res) => {
@@ -33,7 +31,7 @@ router.delete('/:id', async (req, res) => {
     }
 });
 
-// GET Trails
+// GET a Trail
 router.get('/:id', async (req, res) => {
   try {
     const newTrail = await Trail.findByPk(req.params.id);
@@ -66,6 +64,5 @@ router.put('/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
 
 module.exports = router;
