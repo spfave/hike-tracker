@@ -11,17 +11,18 @@ router.get('/', async (req, res) => {
     });
     const trailsFromDb = trailData.map((trail) => trail.get({ plain: true }));
     console.log(trailsFromDb);
-    const responseObj = {}
+    const responseObj = {};
     for (let i = 0; i < 3; i++) {
-      responseObj[`col${i+1}`] = trailsFromDb[Math.floor(Math.random() * trailData.length)]
+      responseObj[`col${i + 1}`] =
+        trailsFromDb[Math.floor(Math.random() * trailData.length)];
     }
-    console.log(responseObj)
+    console.log(responseObj);
     // res.render('homepage', { loggedIn: req.session.loggedIn }); //trails,
     // res.json({ trails }); // TESTING
     res.render('homepage', {
       trails: trailsFromDb,
       user: { username: 'jung', id: '1' },
-      testObj: responseObj
+      testObj: responseObj,
     });
   } catch (error) {
     res.status(500).json(error);
