@@ -36,7 +36,7 @@ router.get('/trail/:id', async (req, res) => {
       include: [
         {
           model: Comment,
-          include: [{ model: User, attributes: ['name'] }],
+          include: [{ model: User, attributes: ['username'] }],
         },
       ],
     });
