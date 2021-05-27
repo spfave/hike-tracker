@@ -70,14 +70,8 @@
   }
 
   .btn-no-style {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 100%;
-    transition: color 0.1s;
-    margin-left: 16px;
+    background-color: var(--dark);
+    color: var(--light);
   }
 
   #dashboard-main {
@@ -98,7 +92,7 @@
 }
 
 #dashboard1 {
-  border-style: solid;
+  border-style: inset;
   border-color: var(--quatrinary);
   border-top-width: 25px;
   border-left-width: 12.5px;
