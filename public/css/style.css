@@ -1,10 +1,11 @@
+
 :root {
-    --primary: #3d5852;
-    --secondary: #86938f;
-    --tertiary: #5e877f;
-    --quatrinary: #6c6b67;
-    --light: #e3e4e3;
-    --dark: #182c23;
+    --primary: #6495ED;
+    --secondary: #006400;
+    --tertiary: #228B22;
+    --quatrinary: #8B4513;
+    --light: #FFF5EE;
+    --dark: #2F4F4F;
     --error: rgb(228, 46, 1);
     --border-radius: 0.3rem;
   }
@@ -16,7 +17,8 @@
     flex-direction: column;
     min-height: 100vh;
     justify-content: flex-start;
-    background-color: var(--quatrinary);
+    background-image: linear-gradient(var(--primary), var(--secondary));
+
   }
   
   a {
@@ -31,26 +33,27 @@
   header {
     padding: 40px;
     text-align: center;
-    background: var(--primary);
     color: var(--light);
   }
-  
-  main {
-    flex-wrap: wrap;
-    flex-grow: 1;
+
+  #button {
+      background-color: var(--dark);
+      color: var(--light);
   }
-  
-  aside {
-    flex: 0;
-    background-color: var(--tertiary);
-    padding: 80px;
-    text-align: left;
-    color: var(--light);
-  }
-  
+
+#login-page {
+  margin: 15px;
+  border-color: var(--quatrinary);
+  border-width: 10px;
+  border-style: solid;
+  border-radius: 25px;
+  padding: .75rem;
+  background-color: var(--quatrinary);
+}
+
   nav {
+    color: var(--light);
     display: flex;
-    background-color: var(--secondary);
   }
   
   nav a {
@@ -58,13 +61,15 @@
     padding: 14px 20px;
     text-decoration: none;
     text-align: center;
+    background-color: var(--dark);
+    border-radius: 25px;
   }
   
   nav a:hover {
     color: var(--secondary);
     background-color: var(--dark);
   }
-  
+  /*
   .gallery {
     flex: 4;
     background-color: #fff;
@@ -74,7 +79,7 @@
     justify-content: center;
     align-items: center;
   }
-  
+  */
   .btn-no-style {
     background: none;
     border: none;
@@ -85,7 +90,7 @@
     transition: color 0.1s;
     margin-left: 16px;
   }
-  
+  /*
   img {
     max-width: 100%;
     height: auto;
@@ -105,6 +110,8 @@
   }
   
   /* CARDS */
+
+  /*
   .card {
     margin: 20px;
     flex: 0 1 300px;
@@ -151,10 +158,11 @@
   }
   
   /* LAYOUT */
+  /*
   .container {
     display: flex;
     flex-flow: column wrap;
     align-content: flex-start;
     align-items: center;
   }
-  
+   
