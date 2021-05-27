@@ -11,8 +11,8 @@ router.get('/', async (req, res) => {
     });
     const trails = trailData.map((trail) => trail.get({ plain: true }));
 
-    // res.render('homepage', { loggedIn: req.session.loggedIn }); //trails,
-    res.json({ trails }); // TESTING
+    res.render('homepage', { loggedIn: req.session.loggedIn }); //trails,
+    // res.json({ trails }); // TESTING
   } catch (error) {
     res.status(500).json(error);
   }
