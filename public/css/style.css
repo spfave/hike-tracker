@@ -62,24 +62,13 @@
     text-decoration: none;
     text-align: center;
     background-color: var(--dark);
-    border-radius: 25px;
   }
   
   nav a:hover {
     color: var(--secondary);
     background-color: var(--dark);
   }
-  /*
-  .gallery {
-    flex: 4;
-    background-color: #fff;
-    padding: 50px;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
-  }
-  */
+
   .btn-no-style {
     background: none;
     border: none;
@@ -90,25 +79,87 @@
     transition: color 0.1s;
     margin-left: 16px;
   }
-  /*
-  img {
-    max-width: 100%;
-    height: auto;
+
+  #dashboard-main {
+    font-size: xx-large;
+    font-weight: 400;
+    color: var(--light);
   }
-  
-  .painting {
-    width: 50%;
-    background-color: white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin-bottom: 25px;
+
+#dashboard0 {
+  border-top: solid;
+  border-color: var(--quatrinary);
+  border-bottom: solid;
+  border-top-width: 25px;
+  border-right-width: 12.5px;
+  border-bottom-width: 25px;
+  border-bottom-color: var(--quatrinary);
+  height: 500px;
+}
+
+#dashboard1 {
+  border-style: solid;
+  border-color: var(--quatrinary);
+  border-top-width: 25px;
+  border-left-width: 12.5px;
+  border-right-width: 12.5px;
+  border-bottom-width: 25px;
+  height: 500px;
+  background-color: lightgoldenrodyellow;
   }
-  
-  .painting-details {
-    text-align: center;
-    padding: 10px 20px;
-    font-weight: bold;
-  }
-  
+
+#dashboard2 {
+  border-top: solid;
+  border-color: var(--quatrinary);
+  border-bottom: solid;
+  border-bottom-width: 25px;
+  height: 500px;
+  border-top-width: 25px;
+  border-left-width: 12.5px;
+  border-bottom-color: var(--quatrinary);
+}
+
+#dashboard-b1 {
+  padding: 12px;
+  height: 50px;
+}
+
+#dashboard-b2 {
+  border-right-style: solid;
+  border-color: var(--quatrinary);
+  border-left-style: solid;
+  border-right-width: 12.5px;
+  border-left-width: 12.5px;
+  padding: 12px;
+  height: 50px;
+}
+
+#dashboard-b3 {
+  padding: 12px;
+  height: 50px;
+}
+
+#dashboard-b4 {
+  padding: 12px;
+  height: 50px;
+}
+
+#dashboard-b5 {
+  border-right-style: solid;
+  border-color: var(--quatrinary);
+  border-left-style: solid;
+  border-right-width: 12.5px;
+  border-left-width: 12.5px;
+  padding: 12px;
+  height: 50px;
+}
+
+#dashboard-b6 {
+  padding: 12px;
+  height: 50px;
+}
+
+
   /* CARDS */
 
   /*
@@ -157,12 +208,5 @@
     padding-left: 100px;
   }
   
-  /* LAYOUT */
-  /*
-  .container {
-    display: flex;
-    flex-flow: column wrap;
-    align-content: flex-start;
-    align-items: center;
-  }
+
    
