@@ -12,7 +12,7 @@
 <body>
   <header>
     <h1></h1>
-  </header>
+ 
   <nav>
     <a href="/">Home</a>
     {{#if loggedIn}}
@@ -21,7 +21,12 @@
     {{else}}
     <a href="/login">Login</a>
     {{/if}}
+    {{#if loggedIn}}
+    <button id="newTrail" class="btn-no-style">New Trail</button>
+    <button id="newHike" class="btn-no-style">New Hike</button>
+    {{/if}}
   </nav>
+   </header>
   <main>
     {{{ body }}}
   </main>
