@@ -17,7 +17,7 @@
     flex-direction: column;
     min-height: 100vh;
     justify-content: flex-start;
-    background-image: linear-gradient(var(--primary), var(--secondary));
+    background-image: linear-gradient(var(--primary), rgb(107, 47, 47), var(--secondary));
 
   }
   
@@ -81,13 +81,13 @@
   }
 
 #dashboard0 {
-  border-top: solid;
+  border-top: inset;
   border-color: var(--quatrinary);
   border-bottom: solid;
   border-top-width: 25px;
-  border-right-width: 12.5px;
   border-bottom-width: 25px;
   border-bottom-color: var(--quatrinary);
+  border-right: solid var(--quatrinary) 12.5px;
   height: 500px;
 }
 
@@ -109,6 +109,7 @@
   border-bottom-width: 25px;
   height: 500px;
   border-top-width: 25px;
+  border-left: solid var(--quatrinary);
   border-left-width: 12.5px;
   border-bottom-color: var(--quatrinary);
 }
@@ -116,6 +117,7 @@
 #dashboard-b1 {
   padding: 12px;
   height: 50px;
+  border-right: solid var(--quatrinary) 12.5px;
 }
 
 #dashboard-b2 {
@@ -131,11 +133,13 @@
 #dashboard-b3 {
   padding: 12px;
   height: 50px;
+  border-left: solid var(--quatrinary) 12.5px;
 }
 
 #dashboard-b4 {
   padding: 12px;
   height: 50px;
+  border-right: solid var(--quatrinary) 12.5px;
 }
 
 #dashboard-b5 {
@@ -151,56 +155,12 @@
 #dashboard-b6 {
   padding: 12px;
   height: 50px;
+  border-left: solid var(--quatrinary) 12.5px;
 }
 
+label {
+  color: var(--light);
+}
 
-  /* CARDS */
-
-  /*
-  .card {
-    margin: 20px;
-    flex: 0 1 300px;
-    border: 7px double var(--dark);
-    border-radius: 10px;
-    background-color: var(--light);
-    color: var(--dark);
-  }
-  
-  .login-card {
-    border: 3px solid var(--dark);
-    border-radius: var(--border-radius);
-    border-style: double;
-    border-width: thick;
-    background-color: #577a7c;
-    color: var(--light);
-  }
-  
-  .card header {
-    color: var(--light);
-    font-weight: bold;
-    text-transform: uppercase;
-    margin: 0;
-    background-color: var(--tertiary);
-    padding: 0.625rem;
-    border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
-  }
-  
-  .card-body {
-    font-size: 1.4rem;
-    text-align: center;
-    font-weight: bold;
-  }
-  
-  .gallery-name {
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    text-shadow: 2px 2px 5px var(--secondary);
-    border: 10px groove var(--light);
-    padding-top: 30px;
-    padding-bottom: 30px;
-    padding-right: 100px;
-    padding-left: 100px;
-  }
-  
 
    

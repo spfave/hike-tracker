@@ -4,37 +4,38 @@ distance/trail length (integer)
 elevation (integer)
 difficulty (integer) this could be a dropdown selection (1-5) or we could change to a word selection (easy, medium, hard) which might be better} -->
 
-<div class="columns">
-    <h2 class="page-title">New Trail</h2>
-    <form class="form">
-        <div class="field">
-            <label for="">Trail Name</label>
-            <input class="input is-info is-rounded" type="text" id="trailName" />
-        </div>
-        <div class="field">
-            <label for="">Trail Length</label>
-            <input class="input is-info is-rounded" type="text" id="trailLength" />
-        </div>
-        <div class="field">
-            <label for="">Elevation</label>
-            <input class="input is-info is-rounded" type="text" id="elevation" />
-        </div>
-        <div class="field">
-            <label for="">Trailhead Location</label>
-            <input class="input is-info is-rounded" type="text" id="location" />
-        </div>
-        <div class="field">
-        <label class="label">Difficulty Level</label>
-        <div class="select is-rounded">
-            <select>
-                <option>Easy</option>
-                <option>Medium</option>
-                <option>Hard</option>
-            </select>
-        </div>
-        </div>
-        <div class="field">
-            <button class="btn btn-primary" type="submit">Submit!</button>
-        </div>
-    </form>
+<div class="columns is-centered">
+    <div class="column is-6">
+        <form class="form">
+            <div class="field">
+                <label for="label">Trail Name</label>
+                <input class="input is-info is-rounded" type="text" id="trailName" />
+            </div>
+            <div class="field">
+                <label for="label">Trail Length</label>
+                <input class="input is-info is-rounded" type="text" id="trailLength" />
+            </div>
+            <div class="field">
+                <label for="label">Elevation</label>
+                <input class="input is-info is-rounded" type="text" id="elevation" />
+            </div>
+            <div class="field">
+                <label for="label">Trailhead Location</label>
+                <input class="input is-info is-rounded" type="text" id="location" />
+            </div>
+            <div class="field">
+                <label class="label">Difficulty Level</label>
+                <div class="select is-rounded">
+                    <select>
+                        <option>Easy</option>
+                        <option>Medium</option>
+                        <option>Hard</option>
+                    </select>
+                </div>
+            </div>
+            <div class="field">
+                <button class="btn btn-primary" type="submit">Submit!</button>
+            </div>
+        </form>
+    </div>
 </div>
