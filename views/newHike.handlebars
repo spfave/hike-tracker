@@ -1,26 +1,27 @@
 <div class="columns">
     <div class="column">
         <h2 class="page-title">New Hike</h2>
-        <form class="form">
+        <form class="form new-hike-form">
             <div class="field">
-                <label for="form new-hike-form">Hike name</label>
-                <input class="input is-info is-rounded" type="text" id="hikeName" />
-            </div>
-            <div class="field">
-                <label for="">Hike Time</label>
-                <input class="input is-info is-rounded" type="text" id="hikeTime" />
-            </div>
-            <div class="field">
-                <label for="">Description of Hike</label>
-                <input class="input is-info is-rounded" type="text" id="description" />
-            </div>
-            <div class="field">
-                <label class="label">Trail Selection</label>
-                <div class="select is-rounded">
-                    <select>
-                        <option></option>
-                    </select>
+                <label>Trail Selection</label>
+                <div class="control">
+                    <div class="select is-rounded">
+                        <select id="trail-name">
+                            <option value="" disabled selected>Select trail completed</option>
+                            {{#each trails as |trail|}}
+                            <option value="{{id}}">{{name}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
                 </div>
+            </div>
+            <div class=" field">
+                <label for="time">Hike Time</label>
+                <input class="input is-info is-rounded" type="text" id="time" />
+            </div>
+            <div class="field">
+                <label for="description">Description of Hike</label>
+                <input class="input is-info is-rounded" type="text" id="description" />
             </div>
             <div class="field">
                 <button class="btn btn-primary" type="submit">Submit!</button>
@@ -28,3 +29,5 @@
         </form>
     </div>
 </div>
+
+<script src="/js/newHIke.js"></script>

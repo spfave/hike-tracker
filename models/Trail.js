@@ -7,32 +7,31 @@ Trail.init(
   {
     //id, name, location, distance, elevation, difficulty
     id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        primaryKey: true,
-        autoIncrement: true
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
     },
     name: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
     location: {
-        type: DataTypes.STRING,
-        allowNull: false        
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     distance: {
-        type: DataTypes.INTEGER,
-        allowNull: true
+      type: DataTypes.FLOAT(6, 2),
+      allowNull: true,
     },
     elevation: {
-        type: DataTypes.INTEGER,
-        allowNull: true
+      type: DataTypes.FLOAT(10, 2),
+      allowNull: true,
     },
     difficulty: {
-        type: DataTypes.INTEGER,
-        allowNull: true        
-   },
-    
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
   },
   {
     sequelize,

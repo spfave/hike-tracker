@@ -1,27 +1,27 @@
 const newHikeHandler = async (event) => {
-    event.preventDefault();
+  event.preventDefault();
 
-    const name = document.querySelector('#hikeName').value.trim();
-  const hikeTime = document.querySelector('#hikeTime').value.trim();
-    const description = document.querySelector('#description').value.trim();
+  const trail_id = parseInt(document.querySelector('#trail-name').value.trim());
+  const time = +document.querySelector('#time').value.trim();
+  const description = document.querySelector('#description').value.trim();
 
-    if (name && hikeTime && description) {
-        const response = await fetch(`/api/hikes`, {
-          method: 'POST',
-          body: JSON.stringify({ name, hikeTime, description}),
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        });
+  if (trail_id) {
+    const response = await fetch(`/api/hikes`, {
+      method: 'POST',
+      body: JSON.stringify({ time, description, trail_id }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
 
-        if (response.ok) {
-            document.location.replace('/homepage');
-          } else {
-            alert('Failed to create hike');
-          }
-        }
+    if (response.ok) {
+      document.location.replace('/dashboard');
+    } else {
+      alert('Failed to create hike');
+    }
+  }
 };
-      
+
 document
   .querySelector('.new-hike-form')
-    .addEventListener('submit', newHikeHandler);
+  .addEventListener('submit', newHikeHandler);
