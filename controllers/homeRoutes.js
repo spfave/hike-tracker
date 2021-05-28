@@ -70,7 +70,9 @@ router.get('/dashboard', async (req, res) => {
 // User Dashboard - log new hike
 router.get('/dashboard/hike/new', async (req, res) => {
   try {
-    const trailData = await Trail.findAll({});
+    const trailData = await Trail.findAll({
+      attributes: ['id', 'name'],
+    });
     const trails = trailData.map((trail) => trail.get({ plain: true }));
 
     res.render('newHike', { trails, loggedIn: true });

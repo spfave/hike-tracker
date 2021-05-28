@@ -4,34 +4,34 @@
     "location": "Fairfax, VA",
     "distance": "3",
     "elevation": "3",
-    "difficulty": "1"
+    "difficulty": "Medium"
   },
   {
     "name": "Laurel Loop Trail",
     "location": "Prince William County, Virginia",
     "distance": "5",
     "elevation": "1",
-    "difficulty": "2"
+    "difficulty": "Easy"
   },
   {
     "name": "Scotts Run Hiking Trail",
     "location": "McLean, VA",
     "distance": "4",
     "elevation": "2",
-    "difficulty": "2"
+    "difficulty": "Medium"
   },
   {
     "name": "Cub Run Stream Valley Trail",
     "location": "Centreville, VA",
     "distance": "7",
     "elevation": "3",
-    "difficulty": "5"
+    "difficulty": "Easy"
   },
   {
     "name": "Potomac Overlook Regional Park",
     "location": "Arlington, VA",
     "distance": "10",
     "elevation": "2",
-    "difficulty": "5"
+    "difficulty": "Hard"
   }
 ]
