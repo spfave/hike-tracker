@@ -52,8 +52,7 @@ router.get('/trail/:id', async (req, res) => {
 // User Dashboard
 router.get('/dashboard', async (req, res) => {
   try {
-    const userData = await User.findByPk(1, {
-      //req.session.userId
+    const userData = await User.findByPk(req.session.userId, {
       attributes: { exclude: ['password'] },
       include: [{ model: Hike }],
     });
@@ -71,7 +70,9 @@ router.get('/dashboard', async (req, res) => {
 // User Dashboard - log new hike
 router.get('/dashboard/hike/new', async (req, res) => {
   try {
-    const trailData = await Trail.findAll({});
+    const trailData = await Trail.findAll({
+      attributes: ['id', 'name'],
+    });
     const trails = trailData.map((trail) => trail.get({ plain: true }));
 
     res.render('newHike', { trails, loggedIn: true });
