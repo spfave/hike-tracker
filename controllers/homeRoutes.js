@@ -55,7 +55,7 @@ router.get('/dashboard', async (req, res) => {
     const userData = await User.findByPk(1, {
       //req.session.userId
       attributes: { exclude: ['password'] },
-      include: [{ model: Hike }],
+      include: [{ model: Hike, include: [{ model: Trail }] }],
     });
     const user = userData.get({ plain: true });
 
