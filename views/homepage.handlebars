@@ -1,27 +1,43 @@
-<div class="columns">
-  <div class="column is-centered">
-    <h1>Trail Samples</h1>
-  </div>
+<div class='columns'>
+
+  {{#each trails}}
+
+    <div class='card'>
+       <div class='column is-3'></div>
+      <header class='card-header'>
+        <p class='card-header-title'>
+            <div class='column is-3'></div>
+      <a href='/trail/{{this.id}}'>
+        <h2>{{this.name}}</h2>
+        </p>
+        <button class='card-header-icon' aria-label='more options'>
+          <span class='icon'>
+            <i class='fas fa-angle-down' aria-hidden='true'></i>
+          </span>
+        </button>
+      </header>
+      <div class='card-content'>
+        <div class='content'>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
+          iaculis mauris.
+          <a href='#'>@bulmaio</a>.
+          <a href='#'>#css</a>
+          <a href='#'>#responsive</a>
+          <br />
+          <time datetime='2016-1-1'>11:09 PM - 1 Jan 2016</time>
+        </div>
+      </div>
+    </div>
+    <div class='column is-3'>
+      </a>
+
+    </div>
+  {{/each}}
+
+  <script src='./js/homepage.js'></script>
 </div>
 
-<div class="columns">
-  <div class="column is-3">
-    <h3>Trail Name</h3>
-  </div>
-  <div class="column is-3">
-    <h3>Trail Difficulty and Elevation</h3>
-  </div>
-  <div class="column is-3">
-    <h3>Trail Location</h3>
-  </div>
-</div>
-
-
-
-
-
-
-{{!--
+{{!
 <div class="columns is-centered">
   <div class="column">
     <div class="field">
@@ -84,9 +100,7 @@
       </div>
     </div>
   </div>
-</div> --}}
+</div> }}
 
-
-
-{{!--
-<script src="./js/login.js"></script> --}}
+{{!
+<script src="./js/login.js"></script> }}
