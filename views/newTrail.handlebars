@@ -1,15 +1,13 @@
-<!-- trail name (string)
-trailhead location (string(
-distance/trail length (integer)
-elevation (integer)
-difficulty (integer) this could be a dropdown selection (1-5) or we could change to a word selection (easy, medium, hard) which might be better} -->
-
 <div class="columns is-centered">
     <div class="column is-6">
-        <form class="form">
+        <form class="form new-trail-form">
             <div class="field">
-                <label for="form new-trail-form">Trail Name</label>
+                <label for="form">Trail Name</label>
                 <input class="input is-info is-rounded" type="text" id="trailName" />
+            </div>
+            <div class="field">
+                <label for="label">Trailhead Location</label>
+                <input class="input is-info is-rounded" type="text" id="location" />
             </div>
             <div class="field">
                 <label for="label">Trail Length</label>
@@ -20,13 +18,9 @@ difficulty (integer) this could be a dropdown selection (1-5) or we could change
                 <input class="input is-info is-rounded" type="text" id="elevation" />
             </div>
             <div class="field">
-                <label for="label">Trailhead Location</label>
-                <input class="input is-info is-rounded" type="text" id="location" />
-            </div>
-            <div class="field">
                 <label class="label">Difficulty Level</label>
                 <div class="select is-rounded">
-                    <select>
+                    <select id="difficulty">
                         <option>Easy</option>
                         <option>Medium</option>
                         <option>Hard</option>
@@ -39,3 +33,5 @@ difficulty (integer) this could be a dropdown selection (1-5) or we could change
         </form>
     </div>
 </div>
+
+<script src="/js/newTrail.js"></script>
