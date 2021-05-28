@@ -4,7 +4,10 @@ const { Hike } = require('../../models');
 // POST a Hike
 router.post('/', async (req, res) => {
   try {
-    const newHike = await Hike.create({ ...req.body, user_id: 1 });
+    const newHike = await Hike.create({
+      ...req.body,
+      user_id: req.session.userId,
+    });
     res.status(201).json(newHike);
   } catch (error) {
     res.status(500).json(error);
