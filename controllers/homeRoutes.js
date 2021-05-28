@@ -52,13 +52,13 @@ router.get('/trail/:id', async (req, res) => {
 // User Dashboard
 router.get('/dashboard', async (req, res) => {
   try {
-    // const userData = await User.findByPk(req.session.userId, {
-    //   attributes: { exclude: ['password'] },
-    //   include: [{ model: Hike }],
-    // });
-    // const user = userData.get({ plain: true });
-
-    res.render('dashboard'); //, { ...user, logged_in: true });
+    const userData = await User.findByPk(req.session.userId, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Hike }],
+    });
+    const user = userData.get({ plain: true });
+    console.log(user)
+    res.render('dashboard', { ...user, logged_in: true });
   } catch (error) {
     res
       .status(500)
