@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
   try {
     const trailData = await Trail.findAll({
       order: Sequelize.literal('rand()'),
-      limit: 2,
+      limit: 5,
     });
     const trails = trailData.map((trail) => trail.get({ plain: true }));
 
@@ -52,14 +52,13 @@ router.get('/trail/:id', async (req, res) => {
 // User Dashboard
 router.get('/dashboard', async (req, res) => {
   try {
-    const userData = await User.findByPk(1, {
-      //req.session.userId
+    const userData = await User.findByPk(req.session.userId, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Hike }],
+      include: [{ model: Hike, include: [{ model: Trail }] }],
     });
     const user = userData.get({ plain: true });
-
-    res.render('dashboard', { loggedIn: true }); //, { ...user, logged_in: true });
+    
+    res.render('dashboard', { ...user, logged_in: true });
     // res.json(user); // TESTING
   } catch (error) {
     res

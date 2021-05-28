@@ -1,31 +1,31 @@
 [
   {
     "time": "10",
-    "description": "hiking trail",
+    "description": "hiking trail 1",
     "user_id": "1",
     "trail_id": "1"
   },
   {
     "time": "20",
-    "description": "hiking trail",
+    "description": "hiking trail 2",
     "user_id": "2",
     "trail_id": "2"
   },
   {
     "time": "30",
-    "description": "hiking trail",
+    "description": "hiking trail 3",
     "user_id": "3",
     "trail_id": "3"
   },
   {
     "time": "40",
-    "description": "hiking trail",
+    "description": "hiking trail 4",
     "user_id": "4",
     "trail_id": "4"
   },
   {
     "time": "50",
-    "description": "hiking trail",
+    "description": "hiking trail 5",
     "user_id": "5",
     "trail_id": "5"
   }
