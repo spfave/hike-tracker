@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
     });
     const trails = trailData.map((trail) => trail.get({ plain: true }));
 
-    res.render('homepage', { trails, loggedIn: req.session.loggedIn }); //trails,
+    res.render('homepage', { trails, loggedIn: req.session.loggedIn });
     // res.json({ trails }); // TESTING
   } catch (error) {
     res.status(500).json(error);
@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
 // Trail - create new trail
 router.get('/trail/new', (req, res) => {
   // res.send('Test');
-  res.render('newTrail');
+  res.render('newTrail', { loggedIn: true });
 });
 
 // Trail - edit saved trail
@@ -33,17 +33,17 @@ router.get('/trail/edit/:id', async (req, res) => {
 router.get('/trail/:id', async (req, res) => {
   try {
     const trailData = await Trail.findByPk(req.params.id, {
-      include: [
-        {
-          model: Comment,
-          include: [{ model: User, attributes: ['username'] }],
-        },
-      ],
+      // include: [
+      //   {
+      //     model: Comment,
+      //     include: [{ model: User, attributes: ['username'] }],
+      //   },
+      // ],
     });
     const trail = trailData.get({ plain: true });
 
-    // res.render('trail', { ...trail, logged_in: req.session.loggedIn });
-    res.json({ ...trail, logged_in: req.session.loggedIn }); // TESTING
+    res.render('trailView', { ...trail, logged_in: req.session.loggedIn });
+    // res.json({ ...trail }); // TESTING
   } catch (error) {
     res.status(500).json(error);
   }
@@ -57,8 +57,9 @@ router.get('/dashboard', async (req, res) => {
       include: [{ model: Hike }],
     });
     const user = userData.get({ plain: true });
-    console.log(user)
+    
     res.render('dashboard', { ...user, logged_in: true });
+    // res.json(user); // TESTING
   } catch (error) {
     res
       .status(500)
@@ -68,12 +69,25 @@ router.get('/dashboard', async (req, res) => {
 
 // User Dashboard - log new hike
 router.get('/dashboard/hike/new', async (req, res) => {
-  res.render('newHike');
+  try {
+    const trailData = await Trail.findAll({});
+    const trails = trailData.map((trail) => trail.get({ plain: true }));
+
+    res.render('newHike', { trails, loggedIn: true });
+    // res.json({ trails }); // TESTING
+  } catch (error) {
+    res.status(500).json(error);
+  }
 });
 
 // User Dashboard - edit saved hike
 router.get('/dashboard/hike/edit/:id', async (req, res) => {
   res.send(req.params.id);
+});
+
+// User Dashboard - view hike
+router.get('/dashboard/hike/:id', async (req, res) => {
+  res.render('hikeView', { loggedIn: true });
 });
 
 // User Profile
