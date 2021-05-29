@@ -76,6 +76,8 @@
   .btn-no-style {
     background-color: var(--dark);
     color: var(--light);
+    border-width: 0px;
+    border-style: none;
   }
 
   #dashboard-main {
@@ -166,5 +168,7 @@ label {
   color: var(--light);
 }
 
-
-   
+#idView {
+  background-color: var(--quatrinary);
+  color: var(--light);
+}
