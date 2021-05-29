@@ -36,6 +36,10 @@
     color: var(--light);
   }
 
+  .card a {
+    color: var(--dark);
+  }
+
   #button {
       background-color: var(--dark);
       color: var(--light);
@@ -72,6 +76,8 @@
   .btn-no-style {
     background-color: var(--dark);
     color: var(--light);
+    border-width: 0px;
+    border-style: none;
   }
 
   #dashboard-main {
@@ -162,5 +168,19 @@ label {
   color: var(--light);
 }
 
+#idView {
+  background-color: var(--quatrinary);
+  color: var(--light);
+}
 
-   
+#newHike {
+  padding: 5px;
+  background-color: var(--dark);
+  color: var(--light);
+}
+
+#newTrail {
+  padding: 5px;
+  background-color: var(--dark);
+  color: var(--light);
+}
