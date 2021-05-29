@@ -13,11 +13,12 @@
 <div class='columns is-centered is-mobile'>
   <div class='column is-1' id='dashboard0'></div>
   <div class='column is-3' id='dashboard1'>
-    <p>Hikes Completed</p>
+    <b><p>Hikes Completed</p></b>
+    <br />
     <ul>
       {{#each uniqueTrails}}
-        <li>{{this.name}}</li>
-        <li>{{this.location}}</li>
+        <a href='/dashboard/hike/{{this.id}}'>{{this.name}}
+          <li>{{this.location}}</li></a>
       {{/each}}
     </ul>
   </div>
