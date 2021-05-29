@@ -9,16 +9,21 @@
     --error: rgb(228, 46, 1);
     --border-radius: 0.3rem;
   }
+
+  html {
+    height: auto;
+  }
   
   body {
     font-family: Arial;
     margin: 0;
-    display: flex;
-    flex-direction: column;
     min-height: 100vh;
     justify-content: flex-start;
     background-image: linear-gradient(var(--primary), rgb(107, 47, 47), var(--secondary));
-
+    height: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
   }
   
   a {
