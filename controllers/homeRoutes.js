@@ -42,7 +42,7 @@ router.get('/trail/:id', async (req, res) => {
     });
     const trail = trailData.get({ plain: true });
 
-    res.render('trailView', { ...trail, logged_in: req.session.loggedIn });
+    res.render('trailView', { ...trail, loggedIn: req.session.loggedIn });
     // res.json({ ...trail }); // TESTING
   } catch (error) {
     res.status(500).json(error);
@@ -57,8 +57,8 @@ router.get('/dashboard', async (req, res) => {
       include: [{ model: Hike, include: [{ model: Trail }] }],
     });
     const user = userData.get({ plain: true });
-    
-    res.render('dashboard', { ...user, logged_in: true });
+
+    res.render('dashboard', { ...user, loggedIn: true });
     // res.json(user); // TESTING
   } catch (error) {
     res
