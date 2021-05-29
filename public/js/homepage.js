@@ -5,7 +5,7 @@ for (let index = 0; index < 5; index++) {
 }
 console.log(ranNumbers);
 
-fetch('/api/hikeRoutes', {
+fetch('/api/trailRoutes', {
   method: 'GET',
   body: JSON.stringify(ranNumbers),
   headers: { 'Content-Type': 'application/json' },

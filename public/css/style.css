@@ -36,6 +36,10 @@
     color: var(--light);
   }
 
+  .card a {
+    color: var(--dark);
+  }
+
   #button {
       background-color: var(--dark);
       color: var(--light);

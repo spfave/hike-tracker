@@ -1,38 +1,22 @@
-<div class='columns'>
-
-  {{#each trails}}
-
+{{#each trails}}
+<div class="columns is-centered">
+  <div class="column is-3 is-centered">
     <div class='card'>
-       <div class='column is-3'></div>
       <header class='card-header'>
-        <p class='card-header-title'>
-            <div class='column is-3'></div>
-      <a href='/trail/{{this.id}}'>
-        <h2>{{this.name}}</h2>
-        </p>
-        <button class='card-header-icon' aria-label='more options'>
-          <span class='icon'>
-            <i class='fas fa-angle-down' aria-hidden='true'></i>
-          </span>
-        </button>
+        <div class='card-header-title'>
+          <a href='/trail/{{this.id}}'>
+            <h2>{{this.name}}</h2>
+        </div>
       </header>
       <div class='card-content'>
         <div class='content'>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
-          iaculis mauris.
-          <a href='#'>@bulmaio</a>.
-          <a href='#'>#css</a>
-          <a href='#'>#responsive</a>
-          <br />
-          <time datetime='2016-1-1'>11:09 PM - 1 Jan 2016</time>
+          <p>{{this.difficulty}}</p>
+          <p>{{this.location}}</p>
         </div>
       </div>
     </div>
-    <div class='column is-3'>
-      </a>
-
-    </div>
-  {{/each}}
-
-  <script src='./js/homepage.js'></script>
+  </div>
 </div>
+{{/each}}
+
+<script src='./js/homepage.js'></script>

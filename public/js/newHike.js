@@ -22,6 +22,7 @@ const newHikeHandler = async (event) => {
   }
 };
 
+
 document
   .querySelector('.new-hike-form')
   .addEventListener('submit', newHikeHandler);
