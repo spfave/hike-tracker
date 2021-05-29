@@ -172,3 +172,15 @@ label {
   background-color: var(--quatrinary);
   color: var(--light);
 }
+
+#newHike {
+  padding: 5px;
+  background-color: var(--dark);
+  color: var(--light);
+}
+
+#newTrail {
+  padding: 5px;
+  background-color: var(--dark);
+  color: var(--light);
+}
