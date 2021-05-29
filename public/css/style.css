@@ -50,6 +50,16 @@
       color: var(--light);
   }
 
+  #sButton {
+    background-color: var(--dark);
+    color: var(--light);
+}
+
+#submit {
+  background-color: var(--dark);
+  color: var(--light);
+}
+
 #login-page {
   margin: 15px;
   border-color: var(--quatrinary);
@@ -188,4 +198,9 @@ label {
   padding: 5px;
   background-color: var(--dark);
   color: var(--light);
+}
+
+#typeColor {
+  color: var(--light);
+  font-weight: 400;
 }
