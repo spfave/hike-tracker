@@ -1,14 +1,15 @@
 const newHikeHandler = async (event) => {
   event.preventDefault();
 
-  const trail_id = parseInt(document.querySelector('#trail-name').value.trim());
+  const trail_id = parseInt(document.querySelector('#trail-name').value);
+  const date = new Date(document.querySelector('#date').value);
   const time = +document.querySelector('#time').value.trim();
   const description = document.querySelector('#description').value.trim();
 
-  if (trail_id) {
+  if (trail_id && date) {
     const response = await fetch(`/api/hikes`, {
       method: 'POST',
-      body: JSON.stringify({ time, description, trail_id }),
+      body: JSON.stringify({ date, time, description, trail_id }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -21,7 +22,6 @@ const newHikeHandler = async (event) => {
     }
   }
 };
-
 
 document
   .querySelector('.new-hike-form')
