@@ -14,12 +14,15 @@
   <div class='column is-1' id='dashboard0'></div>
   <div class='column is-3' id='dashboard1'>
     <p class="mb-3"><strong>Hikes Completed</strong></p>
-    {{#each uniqueTrails}}
+    {{#each hikes}}
     <div class="card mb-2">
       <div class='card-content p-3'>
         <a href='/dashboard/hike/{{this.id}}'>
-          <p><strong>{{this.name}}</strong></p>
-          <small>{{this.location}}</small>
+          <p><strong>{{this.trail.name}}</strong></p>
+          <div class="is-flex is-justify-content-space-between">
+            <small>{{this.trail.location}}</small>
+            <small>{{formatDate this.date}}</small>
+          </div>
         </a>
       </div>
     </div>
