@@ -204,3 +204,7 @@ label {
   color: var(--light);
   font-weight: 400;
 }
+
+.icon {
+  font-weight: 900;
+}
