@@ -10,39 +10,39 @@ const Comment = require('./Comment');
 //1 trail can have many comments
 
 User.hasMany(Hike, {
-    foreignKey: 'user_id',
-    onDelete: 'CASCADE'
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE',
 });
 
 Hike.belongsTo(User, {
-    foreignKey: 'user_id'
-  });
-  
+  foreignKey: 'user_id',
+});
+
 Trail.hasMany(Hike, {
-    foreignKey: 'trail_id',
-    onDelete: 'CASCADE'
+  foreignKey: 'trail_id',
+  onDelete: 'CASCADE',
 });
 
 Hike.belongsTo(Trail, {
-    foreignKey: 'user_id'
-  });
-  
+  foreignKey: 'trail_id',
+});
+
 User.hasMany(Comment, {
-    foreignKey: 'user_id',
-    onDelete: 'CASCADE'
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE',
 });
 
 Comment.belongsTo(User, {
-    foreignKey: 'user_id'
-  });
-  
-Trail.hasMany(Comment, {
-    foreignKey: 'trail_id',
-    onDelete: 'CASCADE'
+  foreignKey: 'user_id',
 });
-  
+
+Trail.hasMany(Comment, {
+  foreignKey: 'trail_id',
+  onDelete: 'CASCADE',
+});
+
 Comment.belongsTo(Trail, {
-    foreignKey: 'user_id'
-  });
+  foreignKey: 'trail_id',
+});
 
 module.exports = { User, Hike, Trail, Comment };

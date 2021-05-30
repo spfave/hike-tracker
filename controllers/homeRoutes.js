@@ -58,20 +58,9 @@ router.get('/dashboard', async (req, res) => {
       include: [{ model: Hike, include: [{ model: Trail }] }],
     });
     const user = userData.get({ plain: true });
-    const uniqueTrails = await sequelize.query(
-      'SELECT distinct t.* FROM trail t join hike h on h.trail_id = t.id where user_id = ?',
-      {
-        model: Trail,
-        mapToModel: true,
-        replacements: [req.session.userId],
-      }
-    );
-    const uniqueTrailsPlain = uniqueTrails.map((trail) =>
-      trail.get({ plain: true })
-    );
+
     res.render('dashboard', {
       ...user,
-      uniqueTrails: uniqueTrailsPlain,
       loggedIn: true,
     });
     // res.json(user); // TESTING
