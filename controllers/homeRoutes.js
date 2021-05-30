@@ -104,7 +104,18 @@ router.get('/dashboard/hike/edit/:id', async (req, res) => {
 
 // User Dashboard - view hike
 router.get('/dashboard/hike/:id', async (req, res) => {
-  res.render('hikeView', { loggedIn: true });
+  try {
+    //  Pull hike data
+    const hikeData = await Hike.findByPk(req.params.id, {
+      include: [{ model: Trail }],
+    });
+    const hike = hikeData.get({ plain: true });
+
+    res.render('hikeView', { ...hike, loggedIn: true });
+    // res.json(hike); // TESTING
+  } catch (error) {
+    res.status(500).json(error);
+  }
 });
 
 // User Profile
