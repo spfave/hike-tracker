@@ -1,15 +1,31 @@
 <div class="columns is-centered">
   <div class="column is-4" id="idView">
     <h3>Trail Name: </h3>
-    <p>
-      {{trail.name}}
-    </p>
+    <p>{{trail.name}}</p>
+  </div>
+</div>
+<div class="columns is-centered">
+  <div class="column is-4" id="idView">
+    <h3>Hike date: </h3>
+    <p>{{formatDate date}}</p>
   </div>
 </div>
 <div class="columns is-centered">
   <div class="column is-4" id="idView">
     <h3>Hike Time: </h3>
     <p>{{time}}</p>
+  </div>
+</div>
+<div class="columns is-centered">
+  <div class="column is-4" id="idView">
+    <h3>Trail distance: </h3>
+    <p>{{trail.distance}} miles</p>
+  </div>
+</div>
+<div class="columns is-centered">
+  <div class="column is-4" id="idView">
+    <h3>Elevation change: </h3>
+    <p>{{trail.elevation}} ft.</p>
   </div>
 </div>
 <div class="columns is-centered">
