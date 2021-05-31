@@ -45,6 +45,10 @@
     color: var(--dark);
   }
 
+  #hpCard {
+    padding: 40px;
+  }
+
   #button {
       background-color: var(--dark);
       color: var(--light);
