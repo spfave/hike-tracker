@@ -22,7 +22,7 @@ As an outdoors enthusiast, I want to be able to choose a hike or trail in my are
 
 Screenshots of our Web Application:
 
-![Lets Go Hike Sign-In Page](assets\images\screenshot2.PNG)
-![Dashboard](assets\images\screenshot3.PNG)
+![Lets Go Hike Sign-In Page](assets\images\login.PNG)
+![Dashboard]("")
 
 Link to deployed application:
