@@ -6,10 +6,18 @@ const sequelize = require('../config/connection');
 // Application homepage - list of trails and login/signup form
 router.get('/', async (req, res) => {
   try {
-    const trailData = await Trail.findAll({
-      order: Sequelize.literal('rand()'),
-      limit: 5,
-    });
+    let trailData;
+    if (req.session.loggedIn) {
+      trailData = await Trail.findAll();
+    } else {
+      const trailNum = await Trail.count();
+      const trailNumListed = trailNum > 5 ? 5 : trailNum;
+
+      trailData = await Trail.findAll({
+        order: Sequelize.literal('rand()'),
+        limit: trailNumListed,
+      });
+    }
     const trails = trailData.map((trail) => trail.get({ plain: true }));
 
     res.render('homepage', { trails, loggedIn: req.session.loggedIn });
