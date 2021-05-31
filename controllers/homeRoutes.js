@@ -21,7 +21,6 @@ router.get('/', async (req, res) => {
 
 // Trail - create new trail
 router.get('/trail/new', (req, res) => {
-  // res.send('Test');
   res.render('newTrail', { loggedIn: true });
 });
 
@@ -33,14 +32,7 @@ router.get('/trail/edit/:id', async (req, res) => {
 // Trail Details
 router.get('/trail/:id', async (req, res) => {
   try {
-    const trailData = await Trail.findByPk(req.params.id, {
-      // include: [
-      //   {
-      //     model: Comment,
-      //     include: [{ model: User, attributes: ['username'] }],
-      //   },
-      // ],
-    });
+    const trailData = await Trail.findByPk(req.params.id, {});
     const trail = trailData.get({ plain: true });
 
     res.render('trailView', { ...trail, loggedIn: req.session.loggedIn });
@@ -58,20 +50,9 @@ router.get('/dashboard', async (req, res) => {
       include: [{ model: Hike, include: [{ model: Trail }] }],
     });
     const user = userData.get({ plain: true });
-    const uniqueTrails = await sequelize.query(
-      'SELECT distinct t.* FROM trail t join hike h on h.trail_id = t.id where user_id = ?',
-      {
-        model: Trail,
-        mapToModel: true,
-        replacements: [req.session.userId],
-      }
-    );
-    const uniqueTrailsPlain = uniqueTrails.map((trail) =>
-      trail.get({ plain: true })
-    );
+
     res.render('dashboard', {
       ...user,
-      uniqueTrails: uniqueTrailsPlain,
       loggedIn: true,
     });
     // res.json(user); // TESTING
