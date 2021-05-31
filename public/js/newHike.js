@@ -23,6 +23,19 @@ const newHikeHandler = async (event) => {
   }
 };
 
+const getDate = () => {
+  const datePad = (dateItem) => (dateItem < 10 ? `0${dateItem}` : dateItem);
+
+  const date = new Date();
+  const year = date.getFullYear();
+  const month = datePad(date.getMonth() + 1);
+  const day = datePad(date.getDate());
+
+  document.querySelector('#date').value = `${year}-${month}-${day}`;
+};
+
+getDate();
+
 document
   .querySelector('.new-hike-form')
   .addEventListener('submit', newHikeHandler);
