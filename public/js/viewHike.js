@@ -12,4 +12,4 @@ const deleteHikeHandler = async (event) => {
   }
 };
 
-document.querySelector('#trash').addEventListener('submit', newHikeHandler);
+document.querySelector('#trash').addEventListener('click', deleteHikeHandler);

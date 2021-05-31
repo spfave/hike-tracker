@@ -212,3 +212,8 @@ label {
 .icon {
   font-weight: 900;
 }
+
+#trash {
+  background-color: var(--dark);
+  color: var(--light);
+}
