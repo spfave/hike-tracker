@@ -38,4 +38,4 @@ getDate();
 
 document
   .querySelector('.new-hike-form')
-  .addEventListener('submit', newHikeHandler);
+    .addEventListener('submit', newHikeHandler);

@@ -22,11 +22,13 @@ As an outdoors enthusiast, I want to be able to choose a hike or trail in my are
 
 Screenshots of our Web Application:
 
-![Lets Go Hike Sign-In Page](assets\images\login.PNG)
-![Dashboard](assets\images\dashboard.PNG)
-![Trails and Hikes](assets\images\trailsandhikes.PNG)
-![Trais and Hike Tracker](assets\images\tracker.PNG)
+![Lets Go Hike Sign-In Page](public/assets/images/login.png)
+![Dashboard](public/assets/images/dashboard.PNG)
+![Trails and Hikes](public/assets/images/trailsandhikes.PNG)
+![Trais and Hike Tracker](public/assets/images/tracker.PNG)
 
 Link to deployed application:
+
+https://gwu-hiker-tracker.herokuapp.com/
 
 
