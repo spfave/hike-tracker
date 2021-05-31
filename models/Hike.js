@@ -12,6 +12,10 @@ Hike.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    date: {
+      type: DataTypes.DATEONLY,
+      allowNull: false,
+    },
     time: {
       type: DataTypes.FLOAT(8, 2),
       allowNull: true,

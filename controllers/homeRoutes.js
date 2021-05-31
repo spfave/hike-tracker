@@ -21,7 +21,6 @@ router.get('/', async (req, res) => {
 
 // Trail - create new trail
 router.get('/trail/new', (req, res) => {
-  // res.send('Test');
   res.render('newTrail', { loggedIn: true });
 });
 
@@ -33,14 +32,7 @@ router.get('/trail/edit/:id', async (req, res) => {
 // Trail Details
 router.get('/trail/:id', async (req, res) => {
   try {
-    const trailData = await Trail.findByPk(req.params.id, {
-      // include: [
-      //   {
-      //     model: Comment,
-      //     include: [{ model: User, attributes: ['username'] }],
-      //   },
-      // ],
-    });
+    const trailData = await Trail.findByPk(req.params.id, {});
     const trail = trailData.get({ plain: true });
 
     res.render('trailView', { ...trail, loggedIn: req.session.loggedIn });
