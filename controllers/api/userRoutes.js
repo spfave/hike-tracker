@@ -6,6 +6,12 @@ const { User } = require('../../models');
 
 // Sign up new user
 router.post('/', validateNewUser, async (req, res) => {
+  // Maintain user signup inputs if errors
+  const signupForm = {
+    username: req.body.username,
+    email: req.body.email,
+  };
+
   // Validate signup inputs
   const msgErrors = [];
   const validationErrors = validationResult(req).errors;
@@ -13,7 +19,7 @@ router.post('/', validateNewUser, async (req, res) => {
   if (validationErrors.length) {
     validationErrors.forEach((err) => msgErrors.push(err.msg));
     req.flash('errors', msgErrors);
-    return res.render('login', { errors: req.flash('errors') });
+    return res.render('login', { errors: req.flash('errors'), ...signupForm });
   }
 
   // Create new user object
