@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const passport = require('../passport/passportLocal');
 const { User } = require('../../models');
 
 // Sign up new user
@@ -20,7 +21,15 @@ router.post('/', async (req, res) => {
 });
 
 // Login user
-router.post('/login', async (req, res) => {
+router.post(
+  '/login',
+  passport.authenticate('local', {
+    successRedirect: '/',
+    failureRedirect: '/login',
+  })
+);
+
+/* router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({
       where: { email: req.body.email },
@@ -54,7 +63,7 @@ router.post('/login', async (req, res) => {
       message: 'Server ran into issue logging you in, please try again',
     });
   }
-});
+}); */
 
 // Logout user
 router.post('/logout', (req, res) => {

@@ -7,9 +7,13 @@ const sequelize = require('../config/connection');
 router.get('/', async (req, res) => {
   try {
     let trailData;
-    if (req.session.loggedIn) {
+    let loggedIn;
+
+    if (req.user) {
+      loggedIn = true;
       trailData = await Trail.findAll();
     } else {
+      loggedIn = false;
       const trailNum = await Trail.count();
       const trailNumListed = trailNum > 5 ? 5 : trailNum;
 
@@ -20,7 +24,7 @@ router.get('/', async (req, res) => {
     }
     const trails = trailData.map((trail) => trail.get({ plain: true }));
 
-    res.render('homepage', { trails, loggedIn: req.session.loggedIn });
+    res.render('homepage', { trails, loggedIn });
     // res.json({ trails }); // TESTING
   } catch (error) {
     res.status(500).json(error);
@@ -53,7 +57,7 @@ router.get('/trail/:id', async (req, res) => {
 // User Dashboard
 router.get('/dashboard', async (req, res) => {
   try {
-    const userData = await User.findByPk(req.session.userId, {
+    const userData = await User.findByPk(req.user.id, {
       attributes: { exclude: ['password'] },
       include: [{ model: Hike, include: [{ model: Trail }] }],
     });

@@ -1,21 +1,19 @@
 <div class="columns is-centered">
   <div class="columm is-4" id="login-page">
-    <form class="form login-form">
+    <form class="form login-form" method="POST" action="/api/users/login">
       <div class="field">
         <p class="control">
-          <input class="input is-rounded" type="email" placeholder="Email" id="email-login">
+          <input class="input is-rounded" type="email" placeholder="Email" id="email-login" name="email">
         </p>
       </div>
       <div class="field">
         <p class="control">
-          <input class="input is-rounded" type="password" placeholder="Password" id="password-login">
+          <input class="input is-rounded" type="password" placeholder="Password" id="password-login" name="password">
         </p>
       </div>
       <div class="field">
         <p class="control">
-          <button type="submit" class="button">
-            Login
-          </button>
+          <button type="submit" class="button">Login</button>
         </p>
       </div>
     </form>
@@ -42,9 +40,7 @@
       </div>
       <div class="field">
         <p class="control">
-          <button type="submit" class="button">
-            Sign Up
-          </button>
+          <button type="submit" class="button">Sign Up</button>
         </p>
       </div>
     </form>
