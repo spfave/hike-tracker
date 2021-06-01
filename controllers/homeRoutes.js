@@ -1,7 +1,10 @@
 const Sequelize = require('sequelize');
 const router = require('express').Router();
 const { User, Trail, Hike, Comment } = require('../models');
-const sequelize = require('../config/connection');
+const {
+  isAuthenticated,
+  isNotAuthenticated,
+} = require('../controllers/middleware/auth');
 
 // Application homepage - list of trails and login/signup form
 router.get('/', async (req, res) => {
@@ -32,12 +35,12 @@ router.get('/', async (req, res) => {
 });
 
 // Trail - create new trail
-router.get('/trail/new', (req, res) => {
+router.get('/trail/new', isAuthenticated, (req, res) => {
   res.render('newTrail', { loggedIn: true });
 });
 
 // Trail - edit saved trail
-router.get('/trail/edit/:id', async (req, res) => {
+router.get('/trail/edit/:id', isAuthenticated, async (req, res) => {
   res.send(req.params.id);
 });
 
@@ -55,7 +58,7 @@ router.get('/trail/:id', async (req, res) => {
 });
 
 // User Dashboard
-router.get('/dashboard', async (req, res) => {
+router.get('/dashboard', isAuthenticated, async (req, res) => {
   try {
     const userData = await User.findByPk(req.user.id, {
       attributes: { exclude: ['password'] },
@@ -76,7 +79,7 @@ router.get('/dashboard', async (req, res) => {
 });
 
 // User Dashboard - log new hike
-router.get('/dashboard/hike/new', async (req, res) => {
+router.get('/dashboard/hike/new', isAuthenticated, async (req, res) => {
   try {
     const trailData = await Trail.findAll({
       attributes: ['id', 'name'],
@@ -91,12 +94,12 @@ router.get('/dashboard/hike/new', async (req, res) => {
 });
 
 // User Dashboard - edit saved hike
-router.get('/dashboard/hike/edit/:id', async (req, res) => {
+router.get('/dashboard/hike/edit/:id', isAuthenticated, async (req, res) => {
   res.send(req.params.id);
 });
 
 // User Dashboard - view hike
-router.get('/dashboard/hike/:id', async (req, res) => {
+router.get('/dashboard/hike/:id', isAuthenticated, async (req, res) => {
   try {
     //  Pull hike data
     const hikeData = await Hike.findByPk(req.params.id, {
@@ -115,7 +118,7 @@ router.get('/dashboard/hike/:id', async (req, res) => {
 // router.get('/profile/:id', async (req, res) => {});
 
 // Login/Sign up page
-router.get('/login', (req, res) => {
+router.get('/login', isNotAuthenticated, (req, res) => {
   res.render('login', { errors: req.flash('errors') });
 });
 
