@@ -22,7 +22,7 @@ As an outdoors enthusiast, I want to be able to choose a hike or trail in my are
 
 ## Screenshots of our Web Application:
 
-![Lets Go Hike Sign-In Page](public/assets/images/login.png)
+![Lets Go Hike Sign-In Page](public/assets/images/login.PNG)
 ![Dashboard](public/assets/images/dashboard.PNG)
 ![Trails and Hikes](public/assets/images/trailsandhikes.PNG)
 ![Trais and Hike Tracker](public/assets/images/tracker.PNG)
