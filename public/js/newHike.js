@@ -30,12 +30,16 @@ const getDate = () => {
   const year = date.getFullYear();
   const month = datePad(date.getMonth() + 1);
   const day = datePad(date.getDate());
+  const dateFormat = `${year}-${month}-${day}`;
 
-  document.querySelector('#date').value = `${year}-${month}-${day}`;
+  const datePicker = document.querySelector('#date');
+  datePicker.value = dateFormat;
+  datePicker.setAttribute('max', dateFormat);
+  // document.querySelector('#date').value = `${year}-${month}-${day}`;
 };
 
 getDate();
 
 document
   .querySelector('.new-hike-form')
-    .addEventListener('submit', newHikeHandler);
+  .addEventListener('submit', newHikeHandler);
