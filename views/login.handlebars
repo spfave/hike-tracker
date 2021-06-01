@@ -23,20 +23,20 @@
 
 <div class="columns is-centered">
   <div class="column is-4" id="login-page">
-    <form class="form signup-form">
+    <form class="form signup-form" method="POST" action="/api/users">
       <div class="field">
         <p class="control">
-          <input class="input is-rounded" type="text" placeholder="Username" id="username-signup">
+          <input class="input is-rounded" type="text" placeholder="Username" id="username-signup" name="username">
         </p>
       </div>
       <div class="field">
         <p class="control">
-          <input class="input is-rounded" type="email" placeholder="Email" id="email-signup">
+          <input class="input is-rounded" type="email" placeholder="Email" id="email-signup" name="email">
         </p>
       </div>
       <div class="field">
         <p class="control">
-          <input class="input is-rounded" type="password" placeholder="Password" id="password-signup">
+          <input class="input is-rounded" type="password" placeholder="Password" id="password-signup" name="password">
         </p>
       </div>
       <div class="field">
@@ -48,4 +48,4 @@
   </div>
 </div>
 
-<script src="./js/login.js"></script>
+<script src="/js/login.js"></script>

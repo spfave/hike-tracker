@@ -1,9 +1,22 @@
 const router = require('express').Router();
+const { validationResult } = require('express-validator');
+const { validateNewUser } = require('../validators/userValidation');
 const passport = require('../passport/passportLocal');
 const { User } = require('../../models');
 
 // Sign up new user
-router.post('/', async (req, res) => {
+router.post('/', validateNewUser, async (req, res) => {
+  // Validate signup inputs
+  const msgErrors = [];
+  const validationErrors = validationResult(req).errors;
+
+  if (validationErrors.length) {
+    validationErrors.forEach((err) => msgErrors.push(err.msg));
+    req.flash('errors', msgErrors);
+    return res.render('login', { errors: req.flash('errors') });
+  }
+
+  // Create new user object
   try {
     const userData = await User.create(req.body);
 
@@ -68,7 +81,7 @@ router.post(
 // Logout user
 router.post('/logout', (req, res) => {
   req.logout();
-  res.redirect('/');
+  res.end();
 
   // req.session.destroy(() => {
   //   res.status(204).end();
