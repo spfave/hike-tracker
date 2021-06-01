@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 const router = require('express').Router();
-const { User, Trail, Hike, Comment } = require('../models');
+const { User, Trail, Hike } = require('../models');
 const {
   isAuthenticated,
   isNotAuthenticated,
@@ -101,7 +101,6 @@ router.get('/dashboard/hike/edit/:id', isAuthenticated, async (req, res) => {
 // User Dashboard - view hike
 router.get('/dashboard/hike/:id', isAuthenticated, async (req, res) => {
   try {
-    //  Pull hike data
     const hikeData = await Hike.findByPk(req.params.id, {
       include: [{ model: Trail }],
     });

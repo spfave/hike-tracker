@@ -1,4 +1,4 @@
-const loginFormHandler = async (event) => {
+/* const loginFormHandler = async (event) => {
   event.preventDefault();
 
   const email = document.querySelector('#email-login').value.trim();
@@ -41,7 +41,7 @@ const signupFormHandler = async (event) => {
       alert('Failed to sign up.');
     }
   }
-};
+}; */
 
 // document
 //   .querySelector('.login-form')
