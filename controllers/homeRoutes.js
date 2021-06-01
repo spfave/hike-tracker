@@ -116,7 +116,7 @@ router.get('/dashboard/hike/:id', async (req, res) => {
 
 // Login/Sign up page
 router.get('/login', (req, res) => {
-  res.render('login');
+  res.render('login', { errors: req.flash('errors') });
 });
 
 module.exports = router;

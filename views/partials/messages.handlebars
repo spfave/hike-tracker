@@ -1,0 +1,12 @@
+<div class="columns is-centered">
+  <div class="column is-4">
+    {{#if errors }}
+    {{#each errors as |msg|}}
+    <div class="notification is-danger is-light">
+      <button class="delete"></button>
+      {{msg}}
+    </div>
+    {{/each}}
+    {{/if}}
+  </div>
+</div>

@@ -4,6 +4,7 @@ require('dotenv').config();
 const express = require('express');
 const session = require('express-session');
 const passport = require('./controllers/passport/passportLocal');
+const connectFlash = require('connect-flash');
 const path = require('path');
 
 // MVC modules/packages
@@ -31,6 +32,9 @@ const sess = {
   store: new SequelizeStore({ db: sequelize }),
 };
 app.use(session(sess));
+
+// Middleware - connect flash
+app.use(connectFlash());
 
 // Middleware - passport
 app.use(passport.initialize());
