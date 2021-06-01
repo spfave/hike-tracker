@@ -1,0 +1,26 @@
+<div class="columns is-centered">
+  <div class="column is-4">
+    {{#if errors }}
+    {{#each errors as |msg|}}
+    <div class="notification is-danger is-light">
+      <button class="delete"></button>
+      {{msg}}
+    </div>
+    {{/each}}
+    {{/if}}
+
+    {{#if msg_success }}
+    <div class="notification is-success is-light">
+      <button class="delete"></button>
+      {{msg_success}}
+    </div>
+    {{/if}}
+
+    {{#if msg_info }}
+    <div class="notification is-info is-light">
+      <button class="delete"></button>
+      {{msg_info}}
+    </div>
+    {{/if}}
+  </div>
+</div>

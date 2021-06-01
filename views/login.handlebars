@@ -1,21 +1,20 @@
+{{> messages}}
 <div class="columns is-centered">
-  <div class="columm is-4" id="login-page">
-    <form class="form login-form">
+  <div class="column is-4" id="login-page">
+    <form class="form login-form" method="POST" action="/api/users/login">
       <div class="field">
         <p class="control">
-          <input class="input is-rounded" type="email" placeholder="Email" id="email-login">
+          <input class="input is-rounded" type="email" placeholder="Email" id="email-login" name="email">
         </p>
       </div>
       <div class="field">
         <p class="control">
-          <input class="input is-rounded" type="password" placeholder="Password" id="password-login">
+          <input class="input is-rounded" type="password" placeholder="Password" id="password-login" name="password">
         </p>
       </div>
       <div class="field">
         <p class="control">
-          <button type="submit" class="button">
-            Login
-          </button>
+          <button type="submit" class="button">Login</button>
         </p>
       </div>
     </form>
@@ -24,31 +23,31 @@
 
 <div class="columns is-centered">
   <div class="column is-4" id="login-page">
-    <form class="form signup-form">
+    <form class="form signup-form" method="POST" action="/api/users">
       <div class="field">
         <p class="control">
-          <input class="input is-rounded" type="text" placeholder="Username" id="username-signup">
+          <input class="input is-rounded" type="text" placeholder="Username" id="username-signup" name="username"
+            value="{{username}}">
         </p>
       </div>
       <div class="field">
         <p class="control">
-          <input class="input is-rounded" type="email" placeholder="Email" id="email-signup">
+          <input class="input is-rounded" type="email" placeholder="Email" id="email-signup" name="email"
+            value="{{email}}">
         </p>
       </div>
       <div class="field">
         <p class="control">
-          <input class="input is-rounded" type="password" placeholder="Password" id="password-signup">
+          <input class="input is-rounded" type="password" placeholder="Password" id="password-signup" name="password">
         </p>
       </div>
       <div class="field">
         <p class="control">
-          <button type="submit" class="button">
-            Sign Up
-          </button>
+          <button type="submit" class="button">Sign Up</button>
         </p>
       </div>
     </form>
   </div>
 </div>
 
-<script src="./js/login.js"></script>
+<script src="/js/login.js"></script>
