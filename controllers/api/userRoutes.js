@@ -52,7 +52,8 @@ router.post('/', validateNewUser, async (req, res) => {
 router.post(
   '/login',
   passport.authenticate('local', {
-    successRedirect: '/',
+    // successRedirect: '/',
+    successReturnToOrRedirect: '/',
     failureRedirect: '/login',
     failureFlash: true,
   })

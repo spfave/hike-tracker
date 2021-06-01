@@ -22,6 +22,7 @@
   "homepage": "https://github.com/spfave/gwu-proj2-fullstack#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "connect-ensure-login": "^0.1.1",
     "connect-flash": "^0.1.1",
     "connect-session-sequelize": "^7.1.1",
     "dotenv": "^9.0.2",
