@@ -6,7 +6,7 @@ router.post('/', async (req, res) => {
   try {
     const newHike = await Hike.create({
       ...req.body,
-      user_id: req.session.userId,
+      user_id: req.user.id,
     });
     res.status(201).json(newHike);
   } catch (error) {
