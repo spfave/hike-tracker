@@ -18,14 +18,27 @@ router.post('/', validateNewUser, async (req, res) => {
 
   // Create new user object
   try {
-    const userData = await User.create(req.body);
+    // Search user table for email to check if already used
+    const userData = await User.findOne({ where: { email: req.body.email } });
+    if (userData) {
+      req.flash(
+        'errors',
+        `Email ${req.body.email} already registered to a user`
+      );
+      return res.render('login', { errors: req.flash('errors') });
+    }
 
-    req.session.save(() => {
-      req.session.userId = userData.id;
-      req.session.loggedIn = true;
+    const newUser = await User.create(req.body);
+    req.flash(
+      'msg_success',
+      `${req.body.username} thanks for signing up! Please log in to continue`
+    );
+    res.status(201).render('login', { msg_success: req.flash('msg_success') });
 
-      res.status(201).json(userData);
-    });
+    // req.session.save(() => {
+    //   req.session.userId = newUser.id;
+    //   req.session.loggedIn = true;
+    // });
   } catch (error) {
     res.status(500).json({
       message: 'Server ran into issue signing you up, please try again',

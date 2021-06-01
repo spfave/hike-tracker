@@ -36,6 +36,12 @@ app.use(session(sess));
 // Middleware - connect flash
 app.use(connectFlash());
 
+// Middleware - global flash variables
+app.use(function (req, res, next) {
+  res.locals.msg_info = req.flash('msg_success');
+  next();
+});
+
 // Middleware - passport
 app.use(passport.initialize());
 app.use(passport.session());

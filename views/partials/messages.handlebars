@@ -8,5 +8,12 @@
     </div>
     {{/each}}
     {{/if}}
+
+    {{#if msg_success }}
+    <div class="notification is-success is-light">
+      <button class="delete"></button>
+      {{msg_success}}
+    </div>
+    {{/if}}
   </div>
 </div>
