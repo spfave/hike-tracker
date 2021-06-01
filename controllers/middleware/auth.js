@@ -1,8 +1,10 @@
+const ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn;
+
 const isAuthenticated = (req, res, next) => {
   // if the user is not logged in: redirect to login page
   // else: continue
   if (!req.isAuthenticated()) {
-    req.flash('errors', 'Please log in to view this content');
+    req.flash('msg_info', 'Please log in to view this content');
     return res.redirect('/login');
   }
   next();
