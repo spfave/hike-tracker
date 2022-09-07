@@ -7,8 +7,9 @@ const userData = require('./userData.json');
 const commentData = require('./commentData.json');
 
 const seedDatabase = async () => {
-    
+    await sequelize.query('SET FOREIGN_KEY_CHECKS = 0')
     await sequelize.sync({ force: true });
+    await sequelize.query('SET FOREIGN_KEY_CHECKS = 1')
 
     await User.bulkCreate(userData, { individualHooks: true });
 
@@ -18,7 +19,5 @@ const seedDatabase = async () => {
     
     await Comment.bulkCreate(commentData);
 }
-
-
 
 seedDatabase();
